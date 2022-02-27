@@ -28,13 +28,13 @@ version = "0.3"
 
 [dependencies.twilight-gateway]
 default-features = false
-features = ["compression", "rustls", "simd-json", "tracing", "zlib-simd"]
+features = ["compression", "rustls", "tracing", "zlib-simd"]
 git = "https://github.com/mov-rax-rax/twilight.git"
 branch = "user"
 
 [dependencies.twilight-http]
 default-features = false
-features = ["rustls", "simd-json", "tracing"]
+features = ["rustls", "tracing"]
 git = "https://github.com/mov-rax-rax/twilight.git"
 branch = "user"
 
