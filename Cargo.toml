@@ -8,9 +8,11 @@ default-features = false
 version = "0.3"
 
 [dependencies.twilight-gateway]
+branch = "user"
 default-features = false
 git = "https://github.com/elysian6969/twilight"
 
 [dependencies.twilight-model]
+branch = "user"
 default-features = false
 git = "https://github.com/elysian6969/twilight"
