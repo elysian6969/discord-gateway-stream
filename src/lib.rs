@@ -1,4 +1,4 @@
-#![allow(dead_code)]
+#![deny(warnings)]
 
 use futures_util::future::{BoxFuture, FutureExt, IntoStream};
 use futures_util::stream;
@@ -11,20 +11,8 @@ use std::task::{Context, Poll};
 use twilight_gateway::shard::{Events, ShardStartError};
 use twilight_gateway::{Event, Shard};
 
-pub type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
-pub type Result<T, E = Error> = std::result::Result<T, E>;
-
-pub const BROWSER: &str = "Discord Client";
-pub const RELEASE_CHANNEL: &str = "canary";
-pub const CLIENT_VERSION: &str = "0.0.133";
-
-pub const OS: &str = "Linux";
-pub const OS_ARCH: &str = "x64";
-pub const OS_VERSION: &str = "5.16.10"; // stable
-
-pub const SYSTEM_LOCALE: &str = "en-US";
-
-pub const WINDOW_MANAGER: &str = "unknown,unknown";
+//pub type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
+//pub type Result<T, E = Error> = std::result::Result<T, E>;
 
 #[derive(Debug)]
 pub enum GatewayEvent {
@@ -82,13 +70,13 @@ impl Gateway {
     fn project<'pin>(self: Pin<&'pin mut Self>) -> GatewayProjection<'pin> {
         unsafe {
             let Self {
-                shard,
+                shard: _shard,
                 stream,
                 _pin,
             } = self.get_unchecked_mut();
 
             GatewayProjection {
-                shard,
+                //shard,
                 stream: Pin::new_unchecked(stream),
             }
         }
@@ -96,7 +84,7 @@ impl Gateway {
 }
 
 struct GatewayProjection<'pin> {
-    shard: &'pin Shard,
+    //shard: &'pin Shard,
     stream: Pin<&'pin mut GatewayStream>,
 }
 

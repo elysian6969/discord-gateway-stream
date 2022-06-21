@@ -7,50 +7,10 @@ version = "0.0.0"
 default-features = false
 version = "0.3"
 
-[dependencies.tokio]
-default-features = false
-features = ["macros", "rt", "sync", "time"]
-version = "1.0"
-
-[dependencies.tracing]
-default-features = false
-features = ["std", "attributes"]
-version = "0.1"
-
-[dependencies.tracing-appender]
-default-features = false
-version = "0.2"
-
-[dependencies.tracing-subscriber]
-default-features = false
-features = ["ansi", "fmt", "env-filter", "std"]
-version = "0.3"
-
 [dependencies.twilight-gateway]
 default-features = false
-features = ["compression", "rustls", "tracing", "zlib-simd"]
-git = "https://github.com/mov-rax-rax/twilight.git"
-branch = "user"
-
-[dependencies.twilight-http]
-default-features = false
-features = ["rustls", "tracing"]
-git = "https://github.com/mov-rax-rax/twilight.git"
-branch = "user"
+git = "https://github.com/elysian6969/twilight"
 
 [dependencies.twilight-model]
 default-features = false
-git = "https://github.com/mov-rax-rax/twilight.git"
-branch = "user"
-
-[features]
-compression = ["twilight-gateway/compression"]
-default = ["decompression", "compression", "rustls"]
-decompression = ["twilight-http/decompression"]
-native = ["twilight-gateway/native", "twilight-http/native"]
-rustls = ["twilight-gateway/rustls", "twilight-http/rustls"]
-rustls-native-roots = ["twilight-gateway/rustls-native-roots", "twilight-http/rustls-native-roots"]
-rustls-webpki-roots = ["twilight-gateway/rustls-webpki-roots", "twilight-http/rustls-webpki-roots"]
-trust-dns = ["twilight-http/trust-dns"]
-zlib-stock = ["twilight-gateway/zlib-stock"]
-zlib-simd = ["twilight-gateway/zlib-simd"]
+git = "https://github.com/elysian6969/twilight"
